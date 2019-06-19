@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <AKS translate="label" module="quickcontact">
+            <label>AKS Extensions</label>
+            <sort_order>199</sort_order>
+        </AKS>
+    </tabs>
+	<sections>
+		<quickcontact translate="label" module="quickcontact">
+			<label>Quick Contact</label>
+			<tab>AKS</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General Settings</label>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enable_quickcontact translate="label">
+							<label>Enable Extension</label>
+							<comment></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</enable_quickcontact>
+                                                <recipient_name translate="label">
+                                                    <label>Recipient Name</label>
+                                                    <frontend_type>text</frontend_type>
+                                                    <sort_order>50</sort_order>
+                                                    <show_in_default>1</show_in_default>
+                                                    <show_in_website>1</show_in_website>
+                                                    <show_in_store>1</show_in_store>
+                                                </recipient_name>
+                                                <recipient_email translate="label">
+                                                    <label>Recipient Email</label>
+                                                    <frontend_type>text</frontend_type>
+                                                    <sort_order>60</sort_order>
+                                                    <show_in_default>1</show_in_default>
+                                                    <show_in_website>1</show_in_website>
+                                                    <show_in_store>1</show_in_store>
+                                                </recipient_email>
+                                                <!--<email_subject translate="label">
+                                                    <label>Email Subject</label>
+                                                    <frontend_type>text</frontend_type>
+                                                    <sort_order>70</sort_order>
+                                                    <show_in_default>1</show_in_default>
+                                                    <show_in_website>1</show_in_website>
+                                                    <show_in_store>1</show_in_store>
+                                                </email_subject>-->
+                                                <send_email translate="label">
+							<label>Enable Email</label>
+							<comment></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</send_email>
+                                                
+                                                <enable_save translate="label">
+							<label>Save to Database</label>
+							<comment></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</enable_save>
+                                                <success_message translate="label">
+                                                    <label>Success Message</label>
+                                                    <frontend_type>text</frontend_type>
+                                                    <sort_order>100</sort_order>
+                                                    <show_in_default>1</show_in_default>
+                                                    <show_in_website>1</show_in_website>
+                                                    <show_in_store>1</show_in_store>
+                                                </success_message>
+                                                <email_disabled_message translate="label">
+                                                    <label>Disabled Email Message</label>
+                                                    <frontend_type>text</frontend_type>
+                                                    <sort_order>100</sort_order>
+                                                    <show_in_default>1</show_in_default>
+                                                    <show_in_website>1</show_in_website>
+                                                    <show_in_store>1</show_in_store>
+                                                    <comment><![CDATA[Message incase both email sending and save to database options are disabled.]]></comment>
+                                                </email_disabled_message>
+
+					</fields>
+				</general>
+
+			</groups>
+		</quickcontact>
+	</sections>
+</config>

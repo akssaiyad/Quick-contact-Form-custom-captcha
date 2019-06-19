@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * AKS
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   AKS
+ * @package    AKS_Quickcontact
+ * @author     AKS Development Team
+ * @copyright  Copyright (c) 2013 AKS. (http://www.aksinfosyst.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php
+ */
+ -->
+<config>
+    <modules>
+        <AKS_Quickcontact>
+            <version>1.0.0</version>
+        </AKS_Quickcontact>
+    </modules>
+    <frontend>
+        <routers>
+            <quickcontact>
+                <use>standard</use>
+                <args>
+                    <module>AKS_Quickcontact</module>
+                    <frontName>quickcontact</frontName>
+                </args>
+            </quickcontact>
+        </routers>
+        <layout>
+            <updates>
+                <quickcontact>
+                    <file>quickcontact.xml</file>
+                </quickcontact>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<quickcontact>
+				<use>admin</use>
+				<args>
+					<module>AKS_Quickcontact</module>
+					<frontName>quickcontact</frontName>
+				</args>
+			</quickcontact>
+        </routers>
+    </admin>
+    <adminhtml>
+<!--		<menu>
+			<quickcontact module="quickcontact">
+				<title>Quickcontact</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="quickcontact">
+						<title>Manage Messages</title>
+						<sort_order>0</sort_order>
+						<action>quickcontact/adminhtml_quickcontact</action>
+					</items>
+				</children>
+			</quickcontact>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<AKS_Quickcontact>
+							<title>Quickcontact Module</title>
+							<sort_order>10</sort_order>
+						</AKS_Quickcontact>
+					</children>
+				</admin>
+			</resources>
+		</acl>-->
+		<layout>
+			<updates>
+				<quickcontact>
+					<file>quickcontact.xml</file>
+				</quickcontact>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <quickcontact>
+                <class>AKS_Quickcontact_Model</class>
+                <resourceModel>quickcontact_mysql4</resourceModel>
+            </quickcontact>
+            <quickcontact_mysql4>
+                <class>AKS_Quickcontact_Model_Mysql4</class>
+                <entities>
+                    <quickcontact>
+                        <table>aks_quickcontact</table>
+                    </quickcontact>
+                </entities>
+            </quickcontact_mysql4>
+        </models>
+        <resources>
+            <quickcontact_setup>
+                <setup>
+                    <module>AKS_Quickcontact</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </quickcontact_setup>
+            <quickcontact_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </quickcontact_write>
+            <quickcontact_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </quickcontact_read>
+        </resources>
+        <blocks>
+            <quickcontact>
+                <class>AKS_Quickcontact_Block</class>
+            </quickcontact>
+        </blocks>
+        <helpers>
+            <quickcontact>
+                <class>AKS_Quickcontact_Helper</class>
+            </quickcontact>
+        </helpers>
+        
+        <template>
+        <email>
+            <quick_contact_email module="quickcontact">
+                <label>Quick Contact Email</label>
+                <file>quick_contact_email.html</file>
+                <type>html</type>
+            </quick_contact_email>
+            
+        </email>
+        </template>
+    </global>
+    <default>
+        <quickcontact>
+                <general>
+                        <enable_quickcontact>1</enable_quickcontact>
+                        <send_email>1</send_email>
+                        <enable_save>1</enable_save>
+                        <success_message><![CDATA[Your message has been sent successfully.]]></success_message>
+                        <email_disabled_message><![CDATA[The service is temporarily unavailable at the moment. please try later.]]></email_disabled_message>
+                </general>
+        </quickcontact>
+    </default>
+</config>
